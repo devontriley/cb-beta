@@ -1,0 +1,56 @@
+.home-animation {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.home-animation__headers {
+    display: none;
+    position: absolute;
+    right: calc(100vw / 2);
+    top: 50%;
+    transform: translateY(-50%) translateX(-100%);
+    text-align: right;
+    font-size: 8rem;
+    line-height: 1em;
+    font-weight: 700;
+    color: #fff;
+}
+
+.home-animation__headers span {
+    color: var(--color-red);
+}
+
+.home-animation__thumb {
+    display: block;
+    fill: var(--color-red);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    overflow: visible;
+}
+
+.home-animation__svg {
+    overflow: visible !important;
+}
+
+.home-animation__svg g {
+    transform-origin: center center;
+}
+
+.home-animation__thumb-group-1 {
+    /*display: none;*/
+}
+
+.home-animation__thumb-group-2 {
+    /*display: none;*/
+}
+
+.home-animation__thumb-group-3 {
+}
+
+.home-animation__thumb-group-4 {
+    /*display: none;*/
+}

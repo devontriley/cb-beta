@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400px" height="271px" viewBox="0 0 400 271" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard Copy 25</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-15.3%" y="-25.4%" width="130.7%" height="150.8%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="12" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="7" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.0748414855 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Artboard-Copy-25" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Browser-Display" filter="url(#filter-1)" transform="translate(37.000000, 37.000000)">
+            <rect id="Rectangle-21" fill="#F6F7F8" x="0" y="0" width="324.809988" height="196.889226" rx="3"></rect>
+            <polygon id="Rectangle-21-Copy" fill="#00253D" points="0.67352016 9.77917736 325.483508 9.77917736 325.483508 196.938413 0.67352016 196.938413"></polygon>
+            <circle id="Oval-5" fill="#00253D" cx="8.72837412" cy="5.29425971" r="1.5739691"></circle>
+            <circle id="Oval-5-Copy" fill="#00253D" cx="14.1657219" cy="5.29425971" r="1.5739691"></circle>
+            <circle id="Oval-5-Copy-2" fill="#00253D" cx="19.6030697" cy="5.29425971" r="1.5739691"></circle>
+            <text id="BROWSER-DISPLAY" font-family="Bariol-Bold, Bariol" font-size="11" font-weight="bold" line-spacing="30" letter-spacing="1.833333" fill="#B8C0CC">
+                <tspan x="105.156113" y="99.5370916">BROWSER DISPLAY</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

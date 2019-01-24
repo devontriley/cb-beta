@@ -1,0 +1,110 @@
+/* TODO: Testing out fully responsive values for h tags etc.. */
+
+:root {
+    --color-blue: #00243e;
+    --color-red: #f7323f;
+    --color-light-grey: #ebecec;
+    --color-lightest-grey: #f6f7f8;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.4rem;
+    @mixin fontBariol;
+    color: var(--color-blue);
+    background: var(--color-blue);
+    padding-top: 13.4rem; /*Matches height of fixed header on desktop */
+
+    @media screen and (min-width: 768px) {
+        font-size: 1.8rem;
+    }
+}
+
+body.home {
+    padding-top: 0;
+}
+
+body.is-mobile {
+    padding-top: 7.8rem; /* Matches height of fixed header on mobile */
+}
+
+body.mobile-nav-active {
+    overflow-y: hidden;
+}
+
+.modules-wrapper {
+    background: #fff;
+}
+
+body.home .modules-wrapper {
+    background: var(--color-blue);
+}
+
+h1 {
+    @mixin fontOpenSans;
+    font-weight: 800;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: var(--color-red);
+    line-height: 1.3em;
+    letter-spacing: 2px;
+    margin: 0 0 1em 0;
+
+    @media screen and (min-width: 768px) {
+        font-size: calc(1.2rem + 6 * ((100vw - 768px) / 1152));
+    }
+
+    @media screen and (min-width: 1920px) {
+        font-size: 1.8rem;
+    }
+}
+
+h2 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.3em;
+
+    @media screen and (min-width: 768px) {
+        font-size: 3.472vw;
+    }
+
+    @media screen and (min-width: 1920px) {
+        font-size: 6.66rem;
+    }
+}
+
+h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0 0 1em 0;
+
+    @media screen and (min-width: 768px) {
+        font-size: 2.22vw;
+    }
+
+    @media screen and (min-width: 1920px) {
+        font-size: 4.224rem;
+    }
+}
+
+.btn {
+    @mixin button;
+}
+
+.btn-wrapper {
+    a {
+        @mixin button;
+    }
+}
+
+.cover-link {
+    position: absolute;
+    z-index: 5;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}

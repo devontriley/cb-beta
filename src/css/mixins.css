@@ -1,0 +1,102 @@
+@define-mixin basicP {
+  font-size: 1.4rem;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.7em;
+
+  @media screen and (min-width: 768px) {
+      font-size: calc(1.4rem + 4 * ((100vw - 768px) / 1152));
+  }
+
+  @media screen and (min-width: 1920px) {
+      font-size: 1.8rem;
+  }
+}
+
+@define-mixin fontBariol {
+  font-family: 'Bariol', Helvetica, Arial, sans-serif;
+}
+
+@define-mixin fontOpenSans {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+
+@define-mixin button $color: var(--color-blue), $borderColor: var(--color-red), $arrowColor: var(--color-red) {
+    height: 4.5rem;
+    line-height: 4.5rem;
+    padding: 0 2.5rem;
+    font-size: 1.2rem;
+    @mixin fontOpenSans;
+    font-weight: 700;
+    display: inline-block;
+    color: $color;
+    border: 1px solid $borderColor;
+    border-radius: 4.5rem;
+    text-decoration: none;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    transition: color ease-out 300ms;
+
+    @media screen and (min-width: 768px) {
+        height: 5.8rem;
+        line-height: 5.8rem;
+        border-radius: 5.8rem;
+        font-size: 1.4rem;
+    }
+
+    &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        z-index: 0;
+        left: -2px;
+        top: -2px;
+        width: 0;
+        height: calc(100% + 4px);
+        background: $borderColor;
+        transition: width ease-out 300ms;
+    }
+
+    &:hover:before {
+        width: calc(100% + 4px);
+    }
+
+    &:hover {
+        color: #fff;
+
+        svg {
+            stroke: #fff;
+            fill: #fff;
+        }
+    }
+
+    span {
+        position: relative;
+        z-index: 1;
+    }
+
+    svg {
+        stroke: $arrowColor;
+        fill: $arrowColor;
+        display: inline-block;
+        vertical-align: middle;
+        position: relative;
+        z-index: 1;
+        transition: all ease-out 300ms;
+
+        &.arrow {
+          width: 1.7rem;
+
+          @media screen and (min-width: 768px) {
+              width: 3.3rem;
+          }
+        }
+
+        &.arrow-right {
+             margin-left: 1rem;
+        }
+    }
+}

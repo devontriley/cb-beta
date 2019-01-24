@@ -1,0 +1,34 @@
+.home-footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 0 3.5rem 4rem 3.5rem;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.home-footer__hiring-svg {
+
+}
+
+.home-footer__scroll {
+    text-align: center;
+}
+
+.home-footer__scroll p {
+    font-size: 1.4rem;
+    color: var(--color-red);
+    opacity: .5;
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-transform: uppercase;
+    @mixin fontOpenSans;
+    margin-bottom: 1.5rem;
+}
+
+.home-footer__scroll-svg {
+
+}

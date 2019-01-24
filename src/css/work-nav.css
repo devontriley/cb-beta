@@ -1,0 +1,90 @@
+.work-nav {
+    margin: 4rem 0;
+    padding: 0 2.5rem;
+}
+
+.work-nav__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 110rem;
+
+    @media screen and (min-width: 768px) {
+        justify-content: space-between;
+    }
+}
+
+.work-nav__inner a {
+    text-decoration: none;
+    color: var(--color-blue);
+    display: block;
+
+    span {
+        white-space: nowrap;
+        @mixin fontOpenSans;
+        font-weight: 700;
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+
+     svg {
+         fill: var(--color-red);
+         transition: fill 300ms ease;
+     }
+
+     &:hover svg {
+          fill: var(--color-blue);
+     }
+}
+
+.work-nav__prev {
+    flex: 0 0 50%;
+
+    @media screen and (min-width: 768px) {
+        flex: 0;
+    }
+
+    svg {
+        width: 3.2rem;
+        height: 1.4rem;
+        margin-bottom: 3rem;
+        margin-top: .8rem;
+    }
+}
+
+.work-nav__next {
+    flex: 0 0 50%;
+    text-align: right;
+
+    @media screen and (min-width: 768px) {
+        flex: 0;
+    }
+
+    svg {
+        width: 3.2rem;
+        height: 1.4rem;
+        margin-bottom: 3rem;
+        margin-top: .8rem;
+    }
+}
+
+.work-nav__all {
+    order: 3;
+    flex: 0 0 100%;
+    text-align: center;
+    margin-top: 4rem;
+
+    @media screen and (min-width: 768px) {
+        flex: 0;
+        order: inherit;
+        margin: 0;
+    }
+
+    svg {
+        width: 3.1rem;
+        height: 3.1rem;
+        margin-bottom: 3rem;
+    }
+}

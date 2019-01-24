@@ -1,0 +1,55 @@
+.image-carousel {
+    overflow: hidden;
+    margin: 6.5rem 0;
+
+    @media screen and (min-width: 768px) {
+        margin: 4.51388vw 0;
+    }
+
+    @media screen and (min-width: 1920px) {
+        margin: 9.58464rem 0;
+    }
+}
+
+.image-carousel__inner {
+    padding: 0 4rem;
+    margin: 0 auto;
+
+    @media screen and (min-width: 768px) {
+        max-width: 110rem;
+    }
+}
+
+.image-carousel__images {
+
+}
+
+.image-carousel__images .slick-list {
+    overflow: visible;
+}
+
+.image-carousel__images .slick-slide {
+    padding: 0 1.25rem;
+    box-sizing: border-box;
+
+    @media screen and (min-width: 768px) {
+        padding: 0 2.256vw;
+    }
+
+    @media screen and (min-width: 1920px) {
+        padding: 0 4.33rem;
+    }
+}
+
+.image-carousel .slick-slide > div {
+    line-height: 0;
+}
+
+.image-carousel__image {
+
+}
+
+.image-carousel__image img {
+    vertical-align: bottom;
+    max-width: 100%;
+}

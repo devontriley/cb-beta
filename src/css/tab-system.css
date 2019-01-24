@@ -1,0 +1,245 @@
+.tab-system {
+  margin: 6.5rem 0 0 0;
+
+  @media screen and (min-width: 768px) {
+    margin: 4.51388vw 0 0 0;
+  }
+
+  @media screen and (min-width: 1920px) {
+    margin: 9.58464rem 0 0 0;
+  }
+}
+
+.tab-system__inner {
+  padding: 0 2.5rem;
+  margin: 0 auto;
+  position: relative;
+
+  @media screen and (min-width: 768px) {
+    max-width: 76.38vw;
+  }
+
+  @media screen and (min-width: 1920px) {
+    max-width: 146.66rem;
+  }
+}
+
+.tab-system__header {
+  margin-bottom: 3rem;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 5.55vw;
+  }
+
+  @media screen and (min-width: 1920px) {
+    margin-bottom: 10.65rem;
+  }
+}
+
+.tab-system__tabs {
+  display: none;
+
+  @media screen and (min-width: 768px) {
+    display: block;
+    font-size: 0;
+    width: 53.47vw;
+    margin-bottom: 3.47vw;
+    position: relative;
+    z-index: 5;
+  }
+}
+
+.tab-system__tabs li {
+  @media screen and (min-width: 768px) {
+    display: inline-block;
+    margin: 0 1rem 1rem 0;
+    font-size: 1.11vw;
+  }
+
+  @media screen and (min-width: 1920px) {
+    font-size: 2.13rem;
+  }
+}
+
+.tab-system__tabs li a {
+  background: var(--color-blue);
+  color: #fff;
+  padding: 2rem 2.5rem;
+  text-decoration: none;
+  display: block;
+  transition: background ease 200ms;
+
+  @media screen and (min-width: 768px) {
+    padding: 1.38vw 1.736vw;
+  }
+
+  @media screen and (min-width: 1920px) {
+    padding: 2.6rem 3.3rem;
+  }
+}
+
+.tab-system__tabs li a:hover,
+.tab-system__tabs li a[aria-selected="true"] {
+  background-color: var(--color-red);
+}
+
+.tab-system__panels {
+
+}
+
+.tab-system__panel {
+  text-align: center;
+  position: relative;
+  display: flex;
+
+  @media screen and (min-width: 768px) {
+    text-align: left;
+    position: static;
+    padding-bottom: 9.7vw;
+  }
+
+  @media screen and (min-width: 1920px) {
+    padding-bottom: 18.66rem;
+  }
+}
+
+.tab-system__panel-image {
+  height: 90vw;
+  margin-bottom: 3rem;
+
+  @media screen and (min-width: 768px) {
+    height: 100%;
+    width: 27.77vw;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    align-items: flex-end;
+  }
+}
+
+.tab-system__panel-image img {
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0 auto;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 13.47vw;
+  }
+}
+
+.tab-system__panel-content {
+  @media screen and (min-width: 768px) {
+    width: 38.19vw;
+  }
+
+  @media screen and (min-width: 1920px) {
+    width: 73.33rem;
+  }
+}
+
+.tab-system__panel-header {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  position: absolute;
+  left: 50%;
+  top: auto;
+  background: var(--color-red);
+  color: #fff;
+  width: 63.2vw;
+  padding: 2.5rem;
+  box-sizing: border-box;
+  transform: translate(-50%, calc(-20.5vw + -3rem - 100%));
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
+.tab-system__panel-copy {
+  display: none;
+
+  @media screen and (min-width: 768px) {
+    display: block;
+  }
+}
+
+.tab-system__panel-copy p {
+  line-height: 1.7em;
+
+  @media screen and (min-width: 768px) {
+    font-size: 1.25vw;
+    margin-bottom: 3.47vw;
+  }
+}
+
+.tab-system__panel-quote {
+  font-size: 1.8rem;
+  line-height: 1.5em;
+  font-style: italic;
+  color: var(--color-red);
+  margin-bottom: .8em;
+
+  @media screen and (min-width: 768px) {
+    font-size: 1.66vw;
+  }
+}
+
+.tab-system__panel-name {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--color-blue);
+  margin-bottom: .3em;
+
+  @media screen and (min-width: 768px) {
+    font-size: 1.66vw;
+  }
+}
+
+.tab-system__panel-title {
+  font-size: 1.8rem;
+  color: var(--color-red);
+
+  @media screen and (min-width: 768px) {
+    font-size: 1.25vw;
+  }
+}
+
+.tab-system__panels .slick-slide {
+  max-width: 75vw;
+  width: 75vw !important;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+.tab-system__slider-nav {
+  max-width: 87rem;
+  width: 100%;
+  height: .6rem;
+  position: relative;
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
+.tab-system__slider-nav:before {
+  content: '';
+  display: block;
+  margin-top: .2rem;
+  height: .2rem;
+  background: #bebebe;
+}
+
+.tab-system__slider-handle {
+  height: .6rem;
+  width: 10%;
+  background: var(--color-red);
+  position: absolute;
+  left: 0;
+  top: -.2rem;
+  transition: left ease 300ms;
+}

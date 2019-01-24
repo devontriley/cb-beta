@@ -1,0 +1,15 @@
+.modal-content {
+
+}
+
+.modal-content--disabled {
+    display: none;
+}
+
+.tingle-modal--cover {
+    background: #ffffff;
+}
+
+.tingle-modal--cover .tingle-modal-box__content {
+    padding: 0;
+}

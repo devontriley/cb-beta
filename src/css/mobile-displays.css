@@ -1,0 +1,66 @@
+.mobile-displays {
+
+}
+
+.mobile-displays__inner {
+
+}
+
+.mobile-displays__header {
+    padding: 0 7rem;
+    margin-bottom: 3rem;
+}
+
+.mobile-displays__images {
+    max-width: 23.8rem;
+    margin: 0 auto;
+
+    @media screen and (min-width: 768px) {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        max-width: 99rem;
+    }
+
+    .slick-list {
+        overflow: visible;
+    }
+
+    .slick-slide {
+        max-width: 23.6rem;
+        padding: 0 1rem;
+
+        @media screen and (min-width: 768px) {
+            max-width: 31.6rem;
+        }
+    }
+}
+
+.mobile-displays__image-wrap {
+    position: relative;
+    width: 23.6rem;
+
+    @media screen and (min-width: 768px) {
+        width: 31.6rem;
+        margin: 0 1rem;
+    }
+}
+
+.mobile-displays__ui {
+    img {
+        width: 100%;
+    }
+}
+
+.mobile-displays__image {
+    position: absolute;
+    left: 6.4%;
+    top: 8.6%;
+    width: 87%;
+    height: 84%;
+    overflow-y: scroll;
+
+    img {
+        width: 100%;
+    }
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1212px" height="763px" viewBox="0 0 1212 763" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard Copy 16</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-4.4%" y="-7.3%" width="108.8%" height="114.5%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="12" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="7" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.0748414855 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Artboard-Copy-16" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Browser-Display" filter="url(#filter-1)" transform="translate(37.000000, 37.000000)">
+            <rect id="Rectangle-21" fill="#F6F7F8" x="0" y="0" width="1135" height="688" rx="3"></rect>
+            <polygon id="Rectangle-21-Copy" fill="#00253D" points="2.35351562 34.171875 1137.35352 34.171875 1137.35352 688.171875 2.35351562 688.171875"></polygon>
+            <circle id="Oval-5" fill="#00253D" cx="30.5" cy="18.5" r="5.5"></circle>
+            <circle id="Oval-5-Copy" fill="#00253D" cx="49.5" cy="18.5" r="5.5"></circle>
+            <circle id="Oval-5-Copy-2" fill="#00253D" cx="68.5" cy="18.5" r="5.5"></circle>
+            <text id="BROWSER-DISPLAY" font-family="Bariol-Bold, Bariol" font-size="16" font-weight="bold" line-spacing="30" letter-spacing="2.666667" fill="#B8C0CC">
+                <tspan x="486.271998" y="362">BROWSER DISPLAY</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

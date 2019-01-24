@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="35px" viewBox="0 0 22 35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 7</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="31" height="19.7792969"></rect>
+    </defs>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-Homepage-Our-Culture" transform="translate(-709.000000, -754.000000)">
+            <g id="Group-7" transform="translate(704.500000, 754.000000)">
+                <rect id="Rectangle-29" stroke="#C5C5C5" stroke-width="2" x="6" y="1" width="19" height="33" rx="9.5"></rect>
+                <g id="Rectangle-29-Copy" transform="translate(0.000000, 10.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Mask"></g>
+                    <rect stroke="#EF3340" stroke-width="2" mask="url(#mask-2)" x="6" y="-9" width="19" height="33" rx="9.5"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
