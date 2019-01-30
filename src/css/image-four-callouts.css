@@ -173,14 +173,18 @@
 
 .image-four-callouts .slick-prev {
     position: absolute;
-    left: 0;
-    bottom: 0;
+    left: 1rem;
+    bottom: 1rem;
+    border: none;
+    background: none;
 }
 
 .image-four-callouts .slick-next {
     position: absolute;
-    right: 0;
-    bottom: 0;
+    right: 2rem;
+    bottom: 1rem;
+    border: none;
+    background: none;
 }
 
 .image-four-callouts .slick-dots {
@@ -191,7 +195,9 @@
 
 .image-four-callouts .slick-dots li {
     display: inline-block;
-    margin: 0 1rem;
+    margin: 0;
+    height: 3rem;
+    width: 3rem;
 }
 
 .image-four-callouts .slick-dots button {
