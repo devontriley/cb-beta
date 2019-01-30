@@ -1,0 +1,41 @@
+.select {
+    position: relative;
+}
+
+.select-hidden {
+    display: none;
+}
+
+.select-styled {
+    @mixin input;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.select-options {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    padding: 0 1rem 1rem 1rem;
+    box-sizing: border-box;
+    background: #fff;
+    @mixin fontOpenSans;
+
+    @media screen and (min-width: 768px) {
+        padding: 0 1.73vw 1.73vw 1.73vw;
+    }
+
+    li {
+        font-size: 1.4rem;
+        padding: .5em 0;
+        cursor: pointer;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}

@@ -7,6 +7,9 @@ require_once(__DIR__ . '/functions/remove_wordpress_defaults.php');
 // Enqueue CSS/JS
 require_once(__DIR__ . '/functions/enqueue_scripts.php');
 
+// Custom Image Sizes
+require_once(__DIR__ . '/functions/custom_image_sizes.php');
+
 // Register menus
 require_once(__DIR__ . '/functions/register_menus.php');
 

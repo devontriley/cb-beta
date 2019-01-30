@@ -1,8 +1,11 @@
 <?php
 $title = get_sub_field('title');
 $copy = get_sub_field('copy');
-$imageID = get_sub_field('image');
-$image = wp_get_attachment_image_src($imageID, 'full');
+$image = get_sub_field('image');
+$imageURL = $image['url'];
+$srcset = wp_get_attachment_image_srcset($image['ID'], 'full');
+$sizes = wp_get_attachment_image_sizes($image['ID'], 'full');
+$alt = $image['alt'];
 $imageLeft = get_sub_field('image_left');
 ?>
 
@@ -13,7 +16,7 @@ $imageLeft = get_sub_field('image_left');
             <?php echo $copy ?>
         </div>
         <div class="module-50-50__image">
-            <img src="<?php echo $image[0] ?>" />
+            <img src="<?php echo $imageURL ?>" srcset="<?php echo $srcset ?>" sizes="<?php echo $sizes ?>" alt="<?php echo $alt ?>" />
         </div>
     </div>
 </div>

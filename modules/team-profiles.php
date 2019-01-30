@@ -21,12 +21,15 @@ $teamMembers = new WP_Query([
                 {
                     $name = $t->post_title;
                     $title = get_field('title', $t->ID);
-                    $headshotID = get_field('headshot', $t->ID);
-                    $headshot = wp_get_attachment_image_src($headshotID, 'full');
+                    $image = get_field('headshot', $t->ID);
+                    $imageURL = $image['url'];
+                    $srcset = wp_get_attachment_image_srcset($image['ID'], 'full');
+                    $sizes = wp_get_attachment_image_sizes($image['ID'], 'full');
+                    $alt = $image['alt'];
                     ?>
                     <li>
                         <div class="team-profiles__headshot">
-                            <img src="<?php echo $headshot[0] ?>" />
+                            <img src="<?php echo $imageURL ?>" srcset="<?php echo $srcset ?>" sizes="<?php echo $sizes ?>" alt="<?php echo $imageAlt ?>" />
                         </div>
                         <h3 class="team-profiles__name"><?php echo $name ?></h3>
                         <p class="team-profiles__title"><?php echo $title ?></p>
@@ -50,12 +53,15 @@ $teamMembers = new WP_Query([
             {
                 $name = $t->post_title;
                 $title = get_field('title', $t->ID);
-                $headshotID = get_field('headshot', $t->ID);
-                $headshot = wp_get_attachment_image_src($headshotID, 'full');
-                ?>
+                $bio = get_field('bio', $t->ID);
+                $image = get_field('headshot', $t->ID);
+                $imageURL = $image['url'];
+                $srcset = wp_get_attachment_image_srcset($image['ID'], 'full');
+                $sizes = wp_get_attachment_image_sizes($image['ID'], 'full');
+                $alt = $image['alt']; ?>
                 <div class="team-profiles__modal-member">
                     <div class="team-profiles__modal-image">
-                        <img src="<?php echo $headshot[0] ?>" alt="<?php echo $name ?>" />
+                        <img src="<?php echo $imageURL ?>" srcset="<?php echo $srcset ?>" sizes="<?php echo $sizes ?>" alt="<?php echo $imageAlt ?>" />
                     </div>
                     <div class="team-profiles__modal-bio">
                         <a href="#" class="team-profiles__modal-close">
@@ -69,13 +75,13 @@ $teamMembers = new WP_Query([
                         </p>
                         <div class="team-profiles__modal-bio-copy">
                             <p>
-                                Maureen led major rare disease brands at Genzyme; at CB, she has led the agency and its clients to unprecedented growth through her unique insights, experience, and humor. Maureen led major rare disease brands at Genzyme; at CB, she has led the agency and its clients to unprecedented growth through her unique insights, experience, and humor.
+                                <?php echo $bio ?>
                             </p>
                         </div>
                         <a href="#" class="team-profiles__modal-next btn">
-                            Next
-                            <svg class="arrow arrow-left" viewBox="0 0 33 21" width="33px" height="21px">
-                                <use xlink:href="#left-arrow"></use>
+                            <span>Next</span>
+                            <svg class="arrow arrow-right" viewBox="0 0 32 14">
+                                <use xlink:href="#arrow-right"></use>
                             </svg>
                         </a>
                     </div>

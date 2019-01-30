@@ -32,6 +32,8 @@ window.mobileDetected = window.mobilecheck();
 
 <?php include('template-parts/master-svg.php'); ?>
 
+<?php include('template-parts/scroll-tracker.php'); ?>
+
 <?php include('template-parts/main-header.php'); ?>
 
 <div class="modules-wrapper">

@@ -55,9 +55,14 @@ $postFormCopy = get_sub_field('post_form_copy');
         </div>
 
         <div class="module-form__callout">
-            <h3>Looking to work at CB?</h3>
+            <h2>Looking to work at CB?</h2>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.</p>
-            <a href="#">See openings</a>
+            <a class="btn" href="<?php bloginfo('url'); ?>/careers">
+                <span>See openings</span>
+                <svg class="arrow arrow-right" viewBox="0 0 32 14">
+                    <use xlink:href="#arrow-right"></use>
+                </svg>
+            </a>
         </div>
     </div>
 </div>

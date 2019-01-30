@@ -82,10 +82,15 @@ body.modal-active {
     position: absolute;
     left: 2.5rem;
     top: 2rem;
+    transition: transform ease-in-out 300ms;
 
     @media screen and (min-width: 768px) {
         margin-bottom: 6rem;
         position: static;
+    }
+
+    &:hover {
+        transform: rotate(180deg);
     }
 }
 

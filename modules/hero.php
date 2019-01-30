@@ -1,6 +1,12 @@
 <?php
 $header = get_sub_field('header');
 $copy = get_sub_field('copy');
+$subheader = get_sub_field('subheader');
+$subheader_copy = get_sub_field('subheader_copy');
+$large_page_title = get_sub_field('large_page_title');
+$image = get_sub_field('image');
+$video = get_sub_field('video');
+$applyURL = get_field('apply_url');
 
 /* Work Page */
 $includeWorkFilter = get_sub_field('include_work_filter');
@@ -18,19 +24,6 @@ if($includeCareers) {
         'order' => 'ASC'
     ]);
 }
-
-/* Career Apply Button */
-$applyURL = get_field('apply_url');
-
-$subheader = get_sub_field('subheader');
-$subheader_copy = get_sub_field('subheader_copy');
-$large_page_title = get_sub_field('large_page_title');
-$imageID = get_sub_field('image');
-if($imageID) {
-    $image = wp_get_attachment_image_src($imageID, 'full');
-    $imageAlt = get_post_meta($imageID, '_wp_attachment_image_alt', true);
-}
-$video = get_sub_field('video');
 ?>
 
 <div class="module-hero <?php if($includeWorkFilter) echo 'include-work-filter'; ?>">
@@ -70,8 +63,8 @@ $video = get_sub_field('video');
 
         <?php if($includeWorkFilter) { ?>
             <div class="module-hero__work-filter">
-                <label>Filter Work By:</label>
-                <select>
+                <label for="work-filter">Filter Work By:</label>
+                <select id="work-filter">
                     <option value="" selected>All</option>
                     <?php foreach($workTerms as $t) { ?>
                         <option value="<?php echo $t->term_id ?>"><?php echo $t->name; ?></option>
@@ -87,8 +80,12 @@ $video = get_sub_field('video');
         <?php } ?>
     </div>
 
-    <?php if($image) { ?>
-        <img src="<?php echo $image[0] ?>" alt="<?php echo $imageAlt ?>" class="module-hero__image" />
+    <?php if($image) {
+        $url = $image['url'];
+        $srcset = wp_get_attachment_image_srcset($image['ID'], 'full');
+        $sizes = wp_get_attachment_image_sizes($image['ID'], 'full');
+        $alt = $image['alt']; ?>
+        <img src="<?php echo $url ?>" srcset="<?php echo $srcset ?>" sizes="<?php echo $sizes ?>" alt="<?php echo $alt ?>" class="module-hero__image" />
     <?php } ?>
 
     <?php if($video) { ?>

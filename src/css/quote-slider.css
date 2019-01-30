@@ -4,7 +4,6 @@
 
   @media screen and (min-width: 768px) {
     margin: 4.51388vw 0;
-    padding: 0;
   }
 
   @media screen and (min-width: 1920px) {
@@ -44,16 +43,16 @@
 }
 
 .quote-slider__quote p {
-  font-size: 1.6rem;
-  line-height: 1.7em;
+    font-size: 1.6rem;
+    line-height: 1.7em;
 
-  @media screen and (min-width: 768px) {
-    font-size: 1.66vw;
-  }
+    @media screen and (min-width: 768px) {
+        font-size: calc(1.6rem + 8 * ((100vw - 768px) / 1152));
+    }
 
-  @media screen and (min-width: 1920px) {
-    font-size: 3.2rem;
-  }
+    @media screen and (min-width: 1920px) {
+        font-size: 2.4rem;
+    }
 }
 
 .quote-slider__byline {
@@ -65,12 +64,12 @@
   letter-spacing: .3rem;
 
   @media screen and (min-width: 768px) {
-    font-size: .972vw;
+      font-size: calc(1.2rem + 4 * ((100vw - 768px) / 1152));
     margin: 0 0 2.77vw 0;
   }
 
   @media screen and (min-width: 1920px) {
-    font-size: 1.86rem;
+    font-size: 1.6rem;
     margin: 0 0 5.33rem 0;
   }
 }
@@ -81,21 +80,29 @@ img.quote-slider__logo {
 
 .quote-slider__prev,
 .quote-slider__next {
-  border: none;
-  background: none;
-  outline: none;
-  margin: 0;
-  padding: 0;
-  line-height: 0;
-  position: absolute;
-  left: 0;
-  top: 50%;
-  cursor: pointer;
+    border: none;
+    background: none;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    cursor: pointer;
+
+    @media screen and (min-width: 768px) {
+        left: 4.5rem;
+    }
 }
 
 .quote-slider__next {
-  left: auto;
-  right: 0;
+    left: auto;
+    right: 0;
+
+    @media screen and (min-width: 768px) {
+        right: 4.5rem;
+    }
 }
 
 .quote-slider__prev svg,

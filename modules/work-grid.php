@@ -12,8 +12,11 @@ $work = new WP_Query($args);
         <?php if($work->posts) { ?>
         <div class="work-grid__items">
             <?php foreach($work->posts as $w) {
-                $imageID = $w->thumbnail;
-                $image = wp_get_attachment_image_src($imageID, 'full'); ?>
+                $image = get_field('thumbnail', $w->ID);
+                $imageURL = $image['url'];
+                $srcset = wp_get_attachment_image_srcset($image['ID'], 'full');
+                $sizes = wp_get_attachment_image_sizes($image['ID'], 'full');
+                $alt = $image['alt']; ?>
             <div class="work-grid__item">
                 <a href="<?php echo get_permalink($w->ID) ?>" class="cover-link"></a>
                 <p class="work-grid__item-tag">Capability Tag</p>
@@ -21,7 +24,7 @@ $work = new WP_Query($args);
                     <p class="work-grid__item-client"><?php echo $w->client_name ?></p>
                     <p class="work-grid__item-copy"><?php echo $w->post_title ?></p>
                 </header>
-                <img class="work-grid__item-image" src="<?php echo $image[0] ?>" />
+                <img src="<?php echo $imageURL ?>" srcset="<?php echo $srcset ?>" sizes="<?php echo $sizes ?>" alt="<?php echo $imageAlt ?>" class="work-grid__item-image" />
             </div>
             <?php } ?>
         </div>

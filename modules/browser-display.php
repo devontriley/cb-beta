@@ -1,7 +1,9 @@
 <?php
-$imageID = get_sub_field('image');
-$image = wp_get_attachment_image_src($imageID, 'full');
-$imageAlt = get_post_meta($imageID, '_wp_attachment_image_alt', true);
+$image = get_sub_field('image');
+$imageURL = $image['url'];
+$srcset = wp_get_attachment_image_srcset($image['ID'], 'full');
+$sizes = wp_get_attachment_image_sizes($image['ID'], 'full');
+$alt = $image['alt'];
 ?>
 
 <div class="browser-display">
@@ -12,7 +14,7 @@ $imageAlt = get_post_meta($imageID, '_wp_attachment_image_alt', true);
             </svg>
         </div>
         <div class="browser-display__image">
-            <img src="<?php echo $image[0] ?>" alt="<?php echo $imageAlt ?>" />
+            <img src="<?php echo $imageURL ?>" srcset="<?php echo $srcset ?>" sizes="<?php echo $sizes ?>" alt="<?php echo $alt ?>" />
         </div>
     </div>
 </div>

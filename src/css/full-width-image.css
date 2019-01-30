@@ -15,6 +15,19 @@
     }
 }
 
+.full-width-image__inner {
+    .svg & {
+        @media screen and (min-width: 768px) {
+            max-width: 68.75%;
+            margin: 0 auto;
+        }
+
+        @media screen and (min-width: 1920px) {
+            max-width: 132rem;
+        }
+    }
+}
+
 .full-width-image__image {
     display: block;
     margin: 0 auto;

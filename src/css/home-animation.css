@@ -6,11 +6,9 @@
 }
 
 .home-animation__headers {
-    display: none;
     position: absolute;
-    right: calc(100vw / 2);
-    top: 50%;
-    transform: translateY(-50%) translateX(-100%);
+    left: 0;
+    top: 0;
     text-align: right;
     font-size: 8rem;
     line-height: 1em;
@@ -20,6 +18,11 @@
 
 .home-animation__headers span {
     color: var(--color-red);
+}
+
+.home-animation__header {
+    position: relative;
+    transform-origin: right center;
 }
 
 .home-animation__thumb {
@@ -53,4 +56,13 @@
 
 .home-animation__thumb-group-4 {
     /*display: none;*/
+}
+
+.home-animation__copy-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(50%, -50%);
+    color: #fff;
+    width: 22%;
 }

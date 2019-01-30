@@ -6,7 +6,6 @@ $moduleAlignment = get_sub_field('module_alignment');
 $header = get_sub_field('header');
 $body = get_sub_field('body');
 $body2 = get_sub_field('body_2');
-
 /* Career Apply Button */
 $applyURL = get_field('apply_url');
 ?>
@@ -16,7 +15,7 @@ $applyURL = get_field('apply_url');
         <?php if($header) { ?>
             <h3><?php echo $header ?></h3>
         <?php } ?>
-        <div class="basic-text__columns">
+        <div class="basic-text__columns" data-columns="<?php echo ($body2) ? '2' : '1' ?>">
             <?php if($body) { ?>
                 <div class="basic-text__column" data-columns="<?php echo ($body2) ? '2' : '1' ?>">
                     <?php echo $body ?>

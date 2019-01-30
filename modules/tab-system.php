@@ -24,15 +24,18 @@ $tabs = get_sub_field('tabs');
             $counter = 0;
             foreach($tabs as $t) {
                 $header = $t['header'];
-                $imageID = $t['image'];
-                $image = wp_get_attachment_image_src($imageID, 'full');
                 $copy = $t['copy'];
                 $quote = $t['quote'];
                 $name = $t['name'];
-                $title = $t['title']; ?>
+                $title = $t['title'];
+                $image = $t['image'];
+                $imageURL = $image['url'];
+                $srcset = wp_get_attachment_image_srcset($image['ID'], 'full');
+                $sizes = wp_get_attachment_image_sizes($image['ID'], 'full');
+                $alt = $image['alt']; ?>
                 <div class="tab-system__panel" <?php if($counter == 0) { echo 'aria-hidden="false"'; } else { echo 'aria-hidden="true" style="display: none;"'; } ?> aria-labelledby="<?php echo $t['header'] ?>">
                     <div class="tab-system__panel-image">
-                        <img src="<?php echo $image[0] ?>" />
+                        <img src="<?php echo $imageURL ?>" srcset="<?php echo $srcset ?>" sizes="<?php echo $sizes ?>" alt="<?php echo $imageAlt ?>" />
                     </div>
                     <div class="tab-system__panel-content">
                         <p class="tab-system__panel-header" tabindex="0"><?php echo $header ?></p>

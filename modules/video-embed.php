@@ -1,8 +1,13 @@
 <?php
 $videoID = get_sub_field('video_id');
 $poster = get_sub_field('video_poster_image');
-$logoID = get_sub_field('logo');
-$logo = ($logoID) ? wp_get_attachment_image_src($logoID, 'full') : null;
+$posterURL = $poster['url'];
+$posterSrcset = wp_get_attachment_image_srcset($poster['ID'], 'full');
+$posterSizes = wp_get_attachment_image_sizes($poster['ID'], 'full');
+$posterAlt = $poster['alt'];
+$logo = get_sub_field('logo');
+$logoURL = $logo['url'];
+$logoAlt = $logo['alt'];
 $header = get_sub_field('header');
 $copy = get_sub_field('copy');
 ?>
@@ -13,7 +18,7 @@ $copy = get_sub_field('copy');
         <div class="video-embed__content">
             <?php if($logo) { ?>
                 <div class="video-embed__logo">
-                    <img src="<?php echo $logo[0] ?>" />
+                    <img src="<?php echo $logoURL ?>" alt="<?php echo $logoAlt ?>" />
                 </div>
             <?php } ?>
             <?php if($header) { ?>

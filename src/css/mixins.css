@@ -21,7 +21,7 @@
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 }
 
-@define-mixin button $color: var(--color-blue), $borderColor: var(--color-red), $arrowColor: var(--color-red) {
+@define-mixin button $color: var(--color-blue), $borderColor: var(--color-red), $arrowColor: var(--color-red), $bgColor: transparent {
     height: 4.5rem;
     line-height: 4.5rem;
     padding: 0 2.5rem;
@@ -31,6 +31,7 @@
     display: inline-block;
     color: $color;
     border: 1px solid $borderColor;
+    background: $bgColor;
     border-radius: 4.5rem;
     text-decoration: none;
     text-transform: capitalize;
@@ -40,11 +41,20 @@
     box-sizing: border-box;
     transition: color ease-out 300ms;
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 992px) {
+        height: calc(4.5rem + 13 * ((100vw - 992px) / 448));
+        line-height: calc(4.5rem + 13 * ((100vw - 992px) / 448));
+        border-radius: calc(4.5rem + 13 * ((100vw - 992px) / 448));
+        font-size: calc(1.2rem + 4 * ((100vw - 992px) / 448));
+        padding: 0 calc(2.5rem + 15 * ((100vw - 992px) / 448));
+    }
+
+    @media screen and (min-width: 1440px) {
         height: 5.8rem;
         line-height: 5.8rem;
         border-radius: 5.8rem;
-        font-size: 1.4rem;
+        font-size: 1.6rem;
+        padding: 0 4rem;
     }
 
     &:before {
@@ -98,5 +108,22 @@
         &.arrow-right {
              margin-left: 1rem;
         }
+    }
+}
+
+@define-mixin input {
+    @mixin fontOpenSans;
+    border: 1px solid var(--color-light-grey);
+    background: #fff;
+    height: 4rem;
+    line-height: 4rem;
+    width: 100%;
+    padding: 0 1rem;
+    box-sizing: border-box;
+
+    @media screen and (min-width: 768px) {
+        height: 4.166vw;
+        line-height: 4.166vw;
+        padding: 0 1.73vw;
     }
 }

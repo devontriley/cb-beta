@@ -56,17 +56,12 @@
 }
 
 .module-50-50__copy p {
-  margin: 0 0 2em 0;
-  line-height: 1.5em;
-  font-size: 1.4rem;
+    @mixin basicP;
+    margin-bottom: 1.5em;
 
-  @media screen and (min-width: 768px) {
-    font-size: calc(1.4rem + 10 * ((100vw - 768px) / 1152));
-  }
-
-  @media screen and (min-width: 1920px) {
-    font-size: 2.4rem;
-  }
+    &:last-child {
+        margin-bottom: 0;
+    }
 }
 
 .module-50-50__image {

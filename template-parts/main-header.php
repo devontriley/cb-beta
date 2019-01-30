@@ -91,7 +91,7 @@
                 </li>
             <?php endforeach; ?>
             <li>
-                <a href="#" class="btn">
+                <a href="<?php echo bloginfo('url'); ?>/work-with-us" class="btn">
                     <span>Work With Us</span>
                     <svg class="arrow arrow-right" viewBox="0 0 32 14">
                         <use xlink:href="#arrow-right"></use>

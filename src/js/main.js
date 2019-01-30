@@ -6,6 +6,7 @@ if (module.hot) {
 }
 
 //import Barba from './../../node_modules/barba.js/dist/barba.js';
+import './styled-select.js';
 import './global.js';
 import './home-animation.js';
 import './main-header.js';
@@ -19,6 +20,8 @@ import './tab-system.js';
 import './video-loader.js';
 import './image-carousel.js';
 import './mobile-displays.js';
+import './image-grid.js';
+import './scroll-tracker.js';
 
 // Barba.Pjax.start();
 //

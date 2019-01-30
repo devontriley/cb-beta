@@ -3,8 +3,31 @@ const workGrid = document.querySelector('.work-grid__items');
 
 if(workFilter)
 {
-    workFilter.addEventListener('change', function(e){
-        const select = this;
+
+    workFilter.addEventListener('select-change', function(e)
+    {
+        fetchWork();
+    });
+
+    // workFilter.addEventListener('change', function(e)
+    // {
+    //     fetchWork();
+    // });
+
+    function createXhrRequest(httpMethod, url, data, callback)
+    {
+        let xhr = new XMLHttpRequest();
+        xhr.open(httpMethod, url);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.onreadystatechange = function() {
+            callback(xhr);
+        };
+        xhr.send(JSON.stringify(data));
+    }
+
+    function fetchWork()
+    {
+        const select = workFilter;
         const termID = select.value;
         const data = {
             action: 'wp_query',
@@ -22,17 +45,6 @@ if(workFilter)
             }
         };
 
-        const createXhrRequest = function( httpMethod, url, data, callback )
-        {
-            let xhr = new XMLHttpRequest();
-            xhr.open(httpMethod, url);
-            xhr.setRequestHeader('Content-Type', 'application/json');
-            xhr.onreadystatechange = function() {
-                callback(xhr);
-            };
-            xhr.send(JSON.stringify(data));
-        }
-
         createXhrRequest(
             'POST',
             ajaxurl+'?action='+data.action,
@@ -47,7 +59,6 @@ if(workFilter)
 
                     // Clear work html
                     workGrid.innerHTML = '';
-                    console.log('clear html');
 
                     // Create new html
                     for(var i = 0; i < response.length; i++)
@@ -55,13 +66,13 @@ if(workFilter)
                         let post = response[i];
 
                         html.push(['<div class="work-grid__item">',
-                                '<a href="'+post.permalink+'" class="cover-link"></a>',
-                                '<p class="work-grid__item-tag">'+post.terms[0].name+'</p>',
-                                '<header>',
-                                '<p class="work-grid__item-client">'+post.client_name+'</p>',
-                                '<p class="work-grid__item-copy">'+post.post_title+'</p>',
-                                '</header>',
-                                '<img class="work-grid__item-image" src="'+post.thumbnail+'" />']);
+                            '<a href="'+post.permalink+'" class="cover-link"></a>',
+                            '<p class="work-grid__item-tag">'+post.terms[0].name+'</p>',
+                            '<header>',
+                            '<p class="work-grid__item-client">'+post.client_name+'</p>',
+                            '<p class="work-grid__item-copy">'+post.post_title+'</p>',
+                            '</header>',
+                            '<img class="work-grid__item-image" src="'+post.thumbnail+'" />']);
                     }
 
                     // Insert new html
@@ -72,21 +83,5 @@ if(workFilter)
                 }
             }
         );
-
-        // AJAX request to get the matching work items
-        // $.ajax({
-        //     'url': ajaxurl,
-        //     'method': 'POST',
-        //     'data': {
-        //         action: 'wp_query',
-        //         payload: payload
-        //     },
-        //     'error': function(xhr, status, error) {
-        //         console.log(status, error);
-        //     },
-        //     'success': function(data) {
-        //         console.log(data);
-        //     }
-        // });
-    });
+    }
 }
