@@ -36,7 +36,7 @@ foreach($work as $w)
     <div class="work-nav__inner">
         <div class="work-nav__prev">
             <a href="<?php echo get_permalink($prev->ID); ?>">
-                <svg viewBox="0 0 32 14">
+                <svg viewBox="0 0 25 16" width="25">
                     <use xlink:href="#arrow-left"></use>
                 </svg>
                 <span>Previous</span>
@@ -52,7 +52,7 @@ foreach($work as $w)
         </div>
         <div class="work-nav__next">
             <a href="<?php echo get_permalink($next->ID); ?>">
-                <svg viewBox="0 0 32 14">
+                <svg viewBox="0 0 25 16" width="25">
                     <use xlink:href="#arrow-right"></use>
                 </svg>
                 <span>Next</span>

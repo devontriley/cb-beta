@@ -1,6 +1,6 @@
 <?php
 $soundCloudID = get_sub_field('soundcloud_id');
-$header = get_sub_field('header');
+$header = colorPeriodsRed(get_sub_field('header'));
 $logoID = get_sub_field('logo');
 $logo = ($logoID) ? wp_get_attachment_image_src($logoID, 'full') : null;
 $copy = get_sub_field('copy');
@@ -22,11 +22,13 @@ $copy = get_sub_field('copy');
                 <img src="<?php echo $logo[0] ?>" />
             </div>
             <?php } ?>
-            <h3 class="soundcloud-embed__header">
-                <?php echo $header ?>
-            </h3>
-            <div class="soundcloud-embed__copy">
-                <?php echo $copy ?>
+            <div class="soundcloud-embed__copy-container">
+                <h3 class="soundcloud-embed__header">
+                    <?php echo $header ?>
+                </h3>
+                <div class="soundcloud-embed__copy">
+                    <?php echo $copy ?>
+                </div>
             </div>
         </div>
     </div>

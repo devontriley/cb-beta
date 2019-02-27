@@ -63,7 +63,15 @@
 
             &.up {
                 transform: rotate(180deg);
-            }
+
+                 _:-ms-fullscreen, :root & {
+                    display: none;
+                 }
+             }
         }
+    }
+
+    &.to-top {
+        cursor: pointer;
     }
 }

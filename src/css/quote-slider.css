@@ -1,45 +1,45 @@
 .quote-slider {
-  margin: 6.5rem 0;
-  padding: 0 2.5rem;
+    margin: 6.5rem 0;
+    padding: 0 2.5rem;
 
-  @media screen and (min-width: 768px) {
-    margin: 4.51388vw 0;
-  }
+    @media screen and (min-width: 768px) {
+        margin: 4.51388vw 0;
+    }
 
-  @media screen and (min-width: 1920px) {
-    margin: 9.58464rem 0;
-  }
+    @media screen and (min-width: 1920px) {
+        margin: 9.58464rem 0;
+    }
 }
 
 .quote-slider__inner {
-  position: relative;
-  max-width: 110rem;
-  margin: 0 auto;
-  box-sizing: border-box;
+    position: relative;
+    max-width: 110rem;
+    margin: 0 auto;
+    box-sizing: border-box;
 
-  @media screen and (min-width: 768px) {
-    padding: 0 9rem;
-  }
+    @media screen and (min-width: 768px) {
+        padding: 0 9rem;
+    }
 }
 
 .quote-slider__slider {
-  padding: 0 2.5rem;
+    padding: 0 2.5rem;
 }
 
 .quote-slider__slide {
-  text-align: center;
+    text-align: center;
 }
 
 .quote-slider__quote {
-  margin: 0 0 3rem 0;
+    margin: 0 0 3rem 0;
 
-  @media screen and (min-width: 768px) {
-    margin: 0 0 2.77vw 0;
-  }
+    @media screen and (min-width: 768px) {
+        margin: 0 0 2.77vw 0;
+    }
 
-  @media screen and (min-width: 1920px) {
-    margin: 0 0 5.33rem 0;
-  }
+    @media screen and (min-width: 1920px) {
+        margin: 0 0 5.33rem 0;
+    }
 }
 
 .quote-slider__quote p {
@@ -56,26 +56,23 @@
 }
 
 .quote-slider__byline {
-  margin: 0 0 3rem 0;
-  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  font-size: 1.2rem;
-  color: var(--color-red);
-  letter-spacing: .3rem;
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--color-red);
+    letter-spacing: .3rem;
 
-  @media screen and (min-width: 768px) {
-      font-size: calc(1.2rem + 4 * ((100vw - 768px) / 1152));
-    margin: 0 0 2.77vw 0;
-  }
+    @media screen and (min-width: 768px) {
+        font-size: calc(1.2rem + 4 * ((100vw - 768px) / 1152));
+    }
 
-  @media screen and (min-width: 1920px) {
-    font-size: 1.6rem;
-    margin: 0 0 5.33rem 0;
-  }
+    @media screen and (min-width: 1920px) {
+        font-size: 1.6rem;
+    }
 }
 
 img.quote-slider__logo {
-  display: inline-block;
+    display: inline-block;
 }
 
 .quote-slider__prev,
@@ -87,8 +84,9 @@ img.quote-slider__logo {
     padding: 0;
     line-height: 0;
     position: absolute;
-    left: 0;
+    left: -1rem;
     top: 50%;
+    transform: translateY(-50%);
     cursor: pointer;
 
     @media screen and (min-width: 768px) {
@@ -98,7 +96,7 @@ img.quote-slider__logo {
 
 .quote-slider__next {
     left: auto;
-    right: 0;
+    right: -1rem;
 
     @media screen and (min-width: 768px) {
         right: 4.5rem;
@@ -107,17 +105,17 @@ img.quote-slider__logo {
 
 .quote-slider__prev svg,
 .quote-slider__next svg {
-  stroke: var(--color-blue);
-  transition: all ease 300ms;
-  width: 1.1rem;
-  fill: var(--color-blue);
+    stroke: var(--color-blue);
+    transition: all ease 300ms;
+    width: 1.1rem;
+    fill: var(--color-blue);
 
-  @media screen and (min-width: 768px) {
-    width: 2rem;
-  }
+    @media screen and (min-width: 768px) {
+        width: 2rem;
+    }
 }
 
 .quote-slider__prev:hover svg,
 .quote-slider__next:hover svg {
-  fill: var(--color-red);
+    fill: var(--color-red);
 }

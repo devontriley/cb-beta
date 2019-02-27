@@ -12,58 +12,105 @@
 }
 
 .soundcloud-embed__inner {
-    max-width: 110rem;
+    max-width: 122rem;
     margin: 0 auto;
 
     @media screen and (min-width: 768px) {
         display: flex;
         flex-wrap: nowrap;
-        align-items: center;
+        align-items: flex-start;
     }
 }
 
 .soundcloud-embed__logo-mobile {
     text-align: center;
-    margin-bottom: 6rem;
-
+    margin-bottom: 3rem;
     @media screen and (min-width: 768px) {
         display: none;
+    }
+
+    img {
+        max-width: 30vw;
+        @media screen and (min-width: 768px) {
+            max-width: none;
+        }
     }
 }
 
 .soundcloud-embed__logo {
     display: none;
-
     @media screen and (min-width: 768px) {
         display: block;
         margin-bottom: 3rem;
+        padding-left: calc(2.5rem + 75 * ((100vw - 768px) / 1152));
+    }
+
+    @media screen and (min-width: 1920px) {
+        padding-left: 10rem;
     }
 }
 
 .soundcloud-embed__container {
     margin-bottom: 3rem;
-
+    position: relative;
+    z-index: 1;
     @media screen and (min-width: 768px) {
-        flex: 0 0 60%;
+        flex: 0 0 53%;
     }
 }
 
 .soundcloud-embed__content {
     @media screen and (min-width: 768px) {
-        flex: 0 0 40%;
-        padding-left: 12.18%;
+        flex: 0 0 47%;
         box-sizing: border-box;
     }
 }
 
-.soundcloud-embed__header {
+.soundcloud-embed__header {}
 
+.soundcloud-embed__copy-container {
+    background: var(--color-light-grey);
+    position: relative;
+    margin: 0 -2.5rem;
+    padding: 4rem 2.5rem;
+    @media screen and (min-width: 768px) {
+        padding: calc(4rem + 30 * ((100vw - 768px) / 1152)) calc(2.5rem + 75 * ((100vw - 768px) / 1152));
+    }
+
+    @media screen and (min-width: 1920px) {
+        padding: 7rem 10rem;
+    }
+
+    &:before {
+        display: none;
+        @media screen and (min-width: 768px) {
+            content: '';
+            display: block;
+            background-color: #ebecec;
+            background-color: var(--color-light-grey);
+            position: absolute;
+            z-index: 0;
+            left: 0;
+            top: 0;
+            width: calc((122rem * .53) + ((100vw - 122rem) /2));
+            height: 100%;
+            transform: translateX(calc((-122rem * .53) - ((100vw - 122rem) / 2)));
+        }
+
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            display: none;
+        }
+    }
+}
+
+.soundcloud-embed__header {
+    position: relative;
 }
 
 .soundcloud-embed__copy {
+    position: relative;
 
-}
-
-.soundcloud-embed__copy p {
-    @mixin basicP;
+    p {
+        @mixin basicP;
+    }
 }

@@ -16,5 +16,10 @@ $images = get_sub_field('images');
                 </div>
             <?php } ?>
         </div>
+        <ul class="image-carousel__nav">
+            <?php for($i = 0; $i < count($images); $i++) { ?>
+                <li <?php if($i === 0){ echo 'class="active"'; } ?>><a href="#"></a></li>
+            <?php } ?>
+        </ul>
     </div>
 </div>

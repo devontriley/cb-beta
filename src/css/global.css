@@ -2,9 +2,11 @@
 
 :root {
     --color-blue: #00243e;
+    --color-dark-blue: #001c2e;
     --color-red: #f7323f;
     --color-light-grey: #ebecec;
     --color-lightest-grey: #f6f7f8;
+    --color-grey: #bebebe;
 }
 
 html {
@@ -104,6 +106,15 @@ p {
     }
 }
 
+sub {
+    font-size: 50%;
+}
+
+sup {
+    font-size: 50%;
+    top: -1em;
+}
+
 .cover-link {
     position: absolute;
     z-index: 5;
@@ -123,4 +134,8 @@ p {
     padding: 0;
     position: absolute;
     width: 1px;
+}
+
+.text-red {
+    color: var(--color-red);
 }

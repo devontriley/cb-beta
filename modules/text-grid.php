@@ -1,5 +1,5 @@
 <?php
-$title = get_sub_field('title');
+$title = colorPeriodsRed(get_sub_field('title'));
 $blocks = get_sub_field('text_blocks');
 ?>
 

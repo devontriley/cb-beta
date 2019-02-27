@@ -1,10 +1,15 @@
-function getElementIndex(node)
-{
+function getElementIndex(node) {
     let index = 0;
     while ((node = node.previousElementSibling)) {
         index++;
     }
     return index;
+}
+
+function round(num, places)
+{
+    let multiplier = Math.pow(10, places);
+    return Math.round(num * multiplier) / multiplier;
 }
 
 function ease(easeType,x,t,b,c,d)
@@ -52,7 +57,14 @@ function ease(easeType,x,t,b,c,d)
     return value;
 }
 
+function encodeHTML(s)
+{
+    return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
+}
+
 module.exports = {
     ease,
-    getElementIndex
+    getElementIndex,
+    round,
+    encodeHTML
 }

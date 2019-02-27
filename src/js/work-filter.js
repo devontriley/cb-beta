@@ -9,11 +9,6 @@ if(workFilter)
         fetchWork();
     });
 
-    // workFilter.addEventListener('change', function(e)
-    // {
-    //     fetchWork();
-    // });
-
     function createXhrRequest(httpMethod, url, data, callback)
     {
         let xhr = new XMLHttpRequest();
@@ -54,8 +49,6 @@ if(workFilter)
                 if(xhr.status == 200 && xhr.readyState == 4) {
                     let response = JSON.parse(xhr.response);
                     let html = [];
-
-                    console.log(response);
 
                     // Clear work html
                     workGrid.innerHTML = '';

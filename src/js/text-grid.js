@@ -1,9 +1,7 @@
 import './../../node_modules/slick-carousel/slick/slick.js';
 
-$(document).ready(function(){
-
-    // TODO: Load/destroy slider on window resize
-
+$(document).ready(function()
+{
     const textBlocks = document.querySelector('.text-grid__blocks');
     let slickTextBlocks;
 

@@ -28,22 +28,25 @@
   margin-bottom: 3rem;
 
   @media screen and (min-width: 768px) {
-    margin-bottom: calc(4.3rem + 64 * ((100vw - 768px) / 1152));
+    margin-bottom: calc(4.3rem + 17 * ((100vw - 768px) / 1152));
   }
 
   @media screen and (min-width: 1920px) {
-    margin-bottom: 10.7rem;
+    margin-bottom: 6rem;
   }
 }
 
 .project-stats__stats {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   margin: 0 -.5rem;
 }
 
 .project-stats__stat {
   flex: 1 0 calc(50% - 1rem);
+  width: 100%;
+  max-width: calc(33.33% - 1rem);
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
@@ -84,6 +87,7 @@
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
+  padding: 0 2rem;
 
   @media screen and (min-width: 768px) {
     font-size: calc(1.2rem + 6 * ((100vw - 768px) / 1152));

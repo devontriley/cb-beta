@@ -8,12 +8,17 @@
 <?php wp_footer() ?>
 
 <script type='text/javascript'>
-    (function (d, t) {
-        var bh = d.createElement(t), s = d.getElementsByTagName(t)[0];
-        bh.type = 'text/javascript';
-        bh.src = 'https://www.bugherd.com/sidebarv2.js?apikey=evnrs50kvxeupugpaevz4w';
-        s.parentNode.insertBefore(bh, s);
-    })(document, 'script');
+    let host = window.location.host;
+
+    if(host !== 'cambridgebmg.com')
+    {
+        (function (d, t) {
+            var bh = d.createElement(t), s = d.getElementsByTagName(t)[0];
+            bh.type = 'text/javascript';
+            bh.src = 'https://www.bugherd.com/sidebarv2.js?apikey=evnrs50kvxeupugpaevz4w';
+            s.parentNode.insertBefore(bh, s);
+        })(document, 'script');
+    }
 </script>
 
 </body>

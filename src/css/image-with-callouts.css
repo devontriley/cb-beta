@@ -1,10 +1,10 @@
 .image-callouts {
     @media screen and (min-width: 768px) {
-        margin: calc(3.4rem + 66 * ((100vw - 768px) / 1152)) 0;
+        margin: calc(8rem + 120 * ((100vw - 768px) / 1152)) 0;
     }
 
     @media screen and (min-width: 1920px) {
-        margin: 10rem 0;
+        margin: 20rem 0;
     }
 }
 
@@ -23,29 +23,51 @@
     clear: both;
 }
 
-.image-callouts[data-callouts="1"] .image-callouts__callout1 {
-    background: #fff;
-    padding: 3rem 4rem;
-    box-sizing: border-box;
-    position: relative;
-    top: 6rem;
-    margin-top: -6rem;
-    max-width: 70vw;
-    float: right;
+.image-callouts[data-callouts="1"] {
 
-    @media screen and (min-width: 768px) {
-        max-width: 24%;
-        left: 43%;
-        top: 12vw;
-        margin-top: -12vw;
-        float: none;
-        padding: calc(3.2rem + 48 * ((100vw - 768px) / 1152)) calc(3rem + 43 * ((100vw - 768px) / 1152));
+    .image-callouts__callout1 {
+        background: #fff;
+        padding: 3rem 4rem;
+        box-sizing: border-box;
+        position: relative;
+        top: 6rem;
+        margin-top: -6rem;
+        width: 70%;
+        float: right;
+
+        @media screen and (min-width: 768px) {
+            width: 38%;
+            left: 43%;
+            top: 12vw;
+            margin-top: -12vw;
+            float: none;
+            padding: calc(3.2rem + 48 * ((100vw - 768px) / 1152)) calc(3rem + 43 * ((100vw - 768px) / 1152));
+        }
+
+        @media screen and (min-width: 1920px) {
+            top: 23.2rem;
+            padding: 8rem 7.3rem;
+            margin-top: -23.2rem;
+            width: 72.9rem;
+        }
     }
 
-    @media screen and (min-width: 1920px) {
-        top: 23.2rem;
-        padding: 8rem 7.3rem;
-        margin-top: -23.2rem;
+    p {
+        @mixin fontOpenSans;
+        @mixin basicP;
+    }
+
+    .image-callouts__image img {
+        width: calc(100% - 2.5rem);
+        vertical-align: bottom;
+
+        @media screen and (min-width: 768px) {
+            width: 56%;
+        }
+
+        @media screen and (min-width: 1920px) {
+            /*width: 107.5rem;*/
+        }
     }
 }
 
@@ -54,8 +76,8 @@
     padding: 4.5rem;
     box-sizing: border-box;
     position: relative;
-    top: 6rem;
-    margin-top: -6rem;
+    top: 1rem;
+    margin-top: -1rem;
 
     @media screen and (min-width: 768px) {
         max-width: 30%;
@@ -109,20 +131,6 @@
     }
 }
 
-.image-callouts[data-callouts="1"] .image-callouts__callout1 p {
-    @mixin fontOpenSans;
-    font-weight: 400;
-    line-height: 1.5em;
-
-    @media screen and (min-width: 768px) {
-        font-size: calc(1.4rem + 6 * ((100vw - 768px) / 1152));
-    }
-
-    @media screen and (min-width: 1920px) {
-        font-size: 2.4rem;
-    }
-}
-
 .image-callouts[data-callouts="2"] .image-callouts__callout1 p {
     font-size: 1.8rem;
 
@@ -141,7 +149,7 @@
     box-sizing: border-box;
     color: #fff;
     position: relative;
-    margin-top: -4rem;
+    margin-top: -1rem;
 
     @media screen and (min-width: 768px) {
         float: right;
@@ -166,15 +174,6 @@
     content: '';
     display: block;
     clear: both;
-}
-
-.image-callouts[data-callouts="1"] .image-callouts__image img {
-    width: 93.42vw;
-    vertical-align: bottom;
-
-    @media screen and (min-width: 768px) {
-        width: 57vw;
-    }
 }
 
 .image-callouts[data-callouts="2"] .image-callouts__image img {

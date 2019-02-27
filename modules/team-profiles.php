@@ -1,5 +1,5 @@
 <?php
-$moduleTitle = get_sub_field('title');
+$moduleTitle = colorPeriodsRed(get_sub_field('title'));
 $teamMembers = new WP_Query([
     'post_type' => 'team',
     'posts_per_page' => -1,
@@ -27,7 +27,7 @@ $teamMembers = new WP_Query([
                     $sizes = wp_get_attachment_image_sizes($image['ID'], 'full');
                     $alt = $image['alt'];
                     ?>
-                    <li>
+                    <li class="gtm__team-profiles_id_<?php echo $t->ID ?>">
                         <div class="team-profiles__headshot">
                             <img src="<?php echo $imageURL ?>" srcset="<?php echo $srcset ?>" sizes="<?php echo $sizes ?>" alt="<?php echo $imageAlt ?>" />
                         </div>
@@ -38,8 +38,8 @@ $teamMembers = new WP_Query([
             }
             ?>
         </ul>
-        <div class="team-profiles__slider-nav">
-            <div class="team-profiles__slider-handle"></div>
+        <div class="team-profiles__slider-nav dragdealer">
+            <div class="team-profiles__slider-handle handle" touch-action="none"></div>
         </div>
     </div>
 </div>
@@ -64,7 +64,7 @@ $teamMembers = new WP_Query([
                         <img src="<?php echo $imageURL ?>" srcset="<?php echo $srcset ?>" sizes="<?php echo $sizes ?>" alt="<?php echo $imageAlt ?>" />
                     </div>
                     <div class="team-profiles__modal-bio">
-                        <a href="#" class="team-profiles__modal-close">
+                        <a href="#" class="team-profiles__modal-close gtm__team-profiles_close">
                             <img src="<?php echo bloginfo('template_directory'); ?>/compiled/assets/images/about_us/SVG/Lightbox_Close.svg" />
                         </a>
                         <h3 class="team-profiles__modal-bio-name">
@@ -78,7 +78,7 @@ $teamMembers = new WP_Query([
                                 <?php echo $bio ?>
                             </p>
                         </div>
-                        <a href="#" class="team-profiles__modal-next btn">
+                        <a href="#" class="team-profiles__modal-next btn gtm__team-profiles_next">
                             <span>Next</span>
                             <svg class="arrow arrow-right" viewBox="0 0 32 14">
                                 <use xlink:href="#arrow-right"></use>

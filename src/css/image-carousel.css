@@ -46,10 +46,48 @@
 }
 
 .image-carousel__image {
-
+    cursor: pointer;
 }
 
 .image-carousel__image img {
     vertical-align: bottom;
     max-width: 100%;
+}
+
+.image-carousel__nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+
+    @media screen and (min-width: 768px) {
+        margin-top: calc(3rem + 60 * ((100vw - 768px) / 1152));
+    }
+
+    @media screen and (min-width: 1920px) {
+        margin-top: 9rem;
+    }
+
+    li {
+        height: .6rem;
+        width: 10%;
+        margin: 0 1rem;
+
+        a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: var(--color-grey);
+            transition: background-color ease 200ms;
+
+            &:hover {
+                background: var(--color-red);
+            }
+        }
+
+        &.active {
+            a {
+                background: var(--color-red);
+            }
+        }
+    }
 }

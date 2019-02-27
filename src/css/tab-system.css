@@ -11,7 +11,7 @@
 }
 
 .tab-system__inner {
-    padding: 0 2.5rem;
+    padding: 0 2.5rem 4rem 2.5rem;
     margin: 0 auto;
     position: relative;
 
@@ -45,10 +45,15 @@
         text-transform: uppercase;
         letter-spacing: .1rem;
         font-size: 0;
-        width: 53.47vw;
+        /*width: 53.47vw;*/
+        width: calc(60rem + 400 * ((100vw - 768px) / 1152));
         margin-bottom: 3.47vw;
         position: relative;
         z-index: 5;
+    }
+
+    @media screen and (min-width: 1920px) {
+        width: 90rem;
     }
 }
 
@@ -69,17 +74,23 @@
 .tab-system__tabs li a {
     background: var(--color-blue);
     color: #fff;
-    padding: 2rem 2.5rem;
+    height: 4.5rem;
+    line-height: 4.5rem;
+    padding: 0 2.5rem;
     text-decoration: none;
     display: block;
     transition: background ease 200ms;
 
     @media screen and (min-width: 768px) {
-        padding: calc(2rem + 0 * ((100vw - 768px) / 1152)) calc(2.5rem + 0 * ((100vw - 768px) / 1152));
+        height: calc(4.5rem + 13 * ((100vw - 992px) / 448));
+        line-height: calc(4.5rem + 13 * ((100vw - 992px) / 448));
+        padding: 0 calc(2.5rem + 15 * ((100vw - 992px) / 448));
     }
 
     @media screen and (min-width: 1920px) {
-        padding: 2rem 2.5rem;
+        height: 5.8rem;
+        line-height: 5.8rem;
+        padding: 0 4rem;
     }
 }
 

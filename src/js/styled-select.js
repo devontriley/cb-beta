@@ -8,7 +8,7 @@ class styledSelect
         this.selected = this.select.children('option:selected');
         this.field = this.select.parents('.field');
 
-        this.selectChange = new Event('select-change');
+        this.selectChange = new CustomEvent('select-change');
 
         if(this.selected.text() == this.select.children('option').first().text())
         {
@@ -31,17 +31,31 @@ class styledSelect
         let svgElem = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
         svgElem.setAttribute('width', '19px');
         svgElem.setAttribute('height', '15px');
-        svgElem.classList.add('select-filter');
+
+        // Check if svg has classList for IE11
+        if(svgElem.classList) {
+            svgElem.classList.add('select-filter');
+        } else if (svgElem.getAttribute) {
+            svgElem.setAttribute('class', 'select-filter');
+        }
+
         let useElem = document.createElementNS('http://www.w3.org/2000/svg', 'use');
         useElem.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '#select-filter-icon');
         svgElem.appendChild(useElem);
-        this.styledSelect[0].prepend(svgElem);
+
+        $(this.styledSelect[0]).prepend(svgElem);
+        // this.styledSelect[0].prepend(svgElem);
 
         // Add svg arrow
         svgElem = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
         svgElem.setAttribute('width', '10px');
         svgElem.setAttribute('height', '6px');
-        svgElem.classList.add('select-arrow');
+        // Check if svg has classList for IE11
+        if(svgElem.classList) {
+            svgElem.classList.add('select-arrow');
+        } else if (svgElem.getAttribute) {
+            svgElem.setAttribute('class', 'select-arrow');
+        }
         useElem = document.createElementNS('http://www.w3.org/2000/svg', 'use');
         useElem.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '#chevron-down');
         svgElem.appendChild(useElem);
@@ -126,14 +140,19 @@ class styledSelect
     }
 }
 
+function createStyledSelects(selects)
+{
+    let styledSelectsArr = [];
+
+    for(let i = 0; i < selects.length; i++)
+    {
+        styledSelectsArr[i] = new styledSelect(selects[i]);
+    }
+}
+
 let styledSelects = document.querySelectorAll('select');
 
 if(styledSelects.length)
 {
-    let styledSelectsArr = [];
-
-    for(let i = 0; i < styledSelects.length; i++)
-    {
-        styledSelectsArr[i] = new styledSelect(styledSelects[i]);
-    }
+    createStyledSelects(styledSelects);
 }

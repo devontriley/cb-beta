@@ -8,7 +8,7 @@ $posterAlt = $poster['alt'];
 $logo = get_sub_field('logo');
 $logoURL = $logo['url'];
 $logoAlt = $logo['alt'];
-$header = get_sub_field('header');
+$header = colorPeriodsRed(get_sub_field('header'));
 $copy = get_sub_field('copy');
 ?>
 

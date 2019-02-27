@@ -1,3 +1,5 @@
+import { round, ease } from './utils.js';
+
 window.onload = function()
 {
     const body = document.body;
@@ -13,7 +15,36 @@ window.onload = function()
     let ticking = false;
     let startingFill = getFillAmount(0.001);
 
+    body.addEventListener('click', (e) =>
+    {
+        if(e.target.closest('.to-top'))
+        {
+            window.requestAnimationFrame(smoothScroll);
+        }
+    });
+
     setFillAmount(startingFill);
+
+    let start = null;
+    let duration = 1000;
+
+    function smoothScroll(timestamp)
+    {
+        if(!start) start = timestamp;
+        let progress = timestamp - start;
+        let easedPosition = documentHeight - ease('easeOutCubic', 0, progress, 0, documentHeight, duration);
+
+        window.scrollTo(0, easedPosition);
+
+        if(progress < duration)
+        {
+            window.requestAnimationFrame(smoothScroll);
+        }
+        else
+        {
+            start = null;
+        }
+    }
 
     function getFillAmount(scroll_pos)
     {
@@ -38,18 +69,19 @@ window.onload = function()
     {
         if(scroll_pos == 0)
         {
+            scrollTrackerText.classList.remove('to-top');
             text.innerText = 'scroll down';
-            svg.classList.remove('up');
-
+            $(svg).removeClass('up');
+            // svg.classList.remove('up');
             scrollTrackerText.style.opacity = '1';
             return;
         }
 
-        if((last_known_scroll_position + windowHeight) == documentHeight)
+        if((last_known_scroll_position + windowHeight) >= documentHeight)
         {
             text.innerText = 'back to top';
-            svg.classList.add('up');
-
+            $(svg).addClass('up');
+            scrollTrackerText.classList.add('to-top');
             scrollTrackerText.style.opacity = '1';
             return;
         }
@@ -59,7 +91,7 @@ window.onload = function()
 
     function scrollEvent()
     {
-        last_known_scroll_position = window.scrollY;
+        last_known_scroll_position = window.pageYOffset;
 
         handleScrollText(last_known_scroll_position);
 

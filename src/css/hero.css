@@ -11,7 +11,7 @@
   }
 
     @media screen and (min-width: 1920px) {
-        padding: 9rem 9em 0 22.6rem;
+        padding: 9rem 9rem 0 22.6rem;
     }
 }
 
@@ -26,7 +26,7 @@
 .module-hero__header {
     padding: 0 0 0 4rem;
     position: relative;
-    z-index: 1;
+    z-index: 7;
 
     @media screen and (min-width: 768px) {
         max-width: 54vw;
@@ -45,12 +45,12 @@
             position: absolute;
             right: 0;
             bottom: 0;
+            display: none;
         }
     }
 }
 
 .module-hero__subheader {
-    background: var(--color-lightest-grey);
     padding: 4rem;
     color: var(--color-blue);
     position: relative;
@@ -67,8 +67,20 @@
     @media screen and (min-width: 1920px) {
         top: 21.3rem;
         padding: 10.6rem 14.7rem;
-        margin-right: -16rem;
+        margin-right: -9rem;
     }
+
+    &:after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: -1;
+        left: 0;
+        top: 0;
+        background: var(--color-lightest-grey);
+     }
 }
 
 .module-hero__subheader ul {
@@ -95,12 +107,13 @@
 }
 
 .module-hero__subheader li a {
-    color: var(--color-blue);
-    text-decoration: none;
-}
-
-.module-hero__subheader li a:hover {
     color: var(--color-red);
+    text-decoration: none;
+    transition: color ease 200ms;
+
+    &:hover {
+        color: var(--color-blue);
+    }
 }
 
 .module-hero__subheader p {
@@ -120,6 +133,11 @@
     color: var(--color-red);
 }
 
+.module-hero__subheader.careers p {
+    @mixin basicP;
+    margin-top: 5rem;
+}
+
 .module-hero__large-page-title {
     @mixin fontOpenSans;
     color: #002a47;
@@ -127,9 +145,11 @@
     font-weight: 700;
     line-height: 1em;
     position: absolute;
+    z-index: -2;
     right: 0;
     top: 0;
-    transform: translateY(calc(-100% + 1.3vw));
+    /*transform: translateY(calc(-100% + 2vw));*/
+    transform: translateY(-100%) translateY(2vw);
 
     @media screen and (min-width: 768px) {
         font-size: calc(10.5rem + 155 * ((100vw - 768px) / 1152));
@@ -164,19 +184,32 @@
 }
 
 .module-hero__work-filter {
-    background: var(--color-lightest-grey);
     padding: 2rem;
     color: var(--color-blue);
     position: relative;
-    z-index: 5;
+    z-index: 6;
     margin: 4.5rem -2.5rem 0 0;
 
     @media screen and (min-width: 768px) {
         padding: calc(4.3rem + 63 * ((100vw - 768px) / 1152)) calc(6rem + 87 * ((100vw - 768px) / 1152));
+        margin: calc(4.5rem + 35 * ((100vw - 768px) / 1152)) calc(-1 * (5rem + 40 * ((100vw - 768px) / 1152))) 0 0;
     }
 
     @media screen and (min-width: 1920px) {
         padding: 8rem 13rem;
+        margin: 8rem -9rem 0 0;
+    }
+
+    &:after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: -1;
+        left: 0;
+        top: 0;
+        background: var(--color-lightest-grey);
     }
 
     .select {
@@ -195,6 +228,10 @@
 
     @media screen and (min-width: 768px) {
         border-bottom: 1px solid var(--color-red);
+    }
+
+    .value {
+        margin-left: .5em;
     }
 
     &:hover {
@@ -252,7 +289,7 @@
     }
 
     .select-filter {
-        margin-right: 1rem;
+        margin-right: 2rem;
         display: inline-block;
         vertical-align: middle;
         transition: fill ease 200ms;

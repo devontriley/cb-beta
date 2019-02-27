@@ -37,12 +37,32 @@ function createVideoPlayer(videoContainer, videoID)
         }
     }
 
-    return new YT.Player(props.ele, {
+    let player = new YT.Player(props.ele, {
         height: props.height,
         width: props.width,
         videoId: props.videoID,
-        playerVars: props.playerVars
+        playerVars: props.playerVars,
+        events: {
+            'onStateChange': function(data) {
+                let status = data.data; // 1 = playing
+
+                if(status === 1)
+                {
+                    if(dataLayer)
+                    {
+                        dataLayer.push({
+                            'event': 'playVideo',
+                            'eventCategory': 'Video',
+                            'eventAction': 'Video Play',
+                            'eventLabel': 'Documentary Video Play'
+                        });
+                    }
+                }
+            }
+        }
     });
+
+    return player;
 }
 
 // Vimeo

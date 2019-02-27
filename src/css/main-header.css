@@ -1,5 +1,5 @@
 .main-header {
-    position: fixed;
+    position: absolute;
     z-index: 10;
     left: 0;
     top: 0;
@@ -11,7 +11,7 @@
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
-    transition: transform ease 300ms, background-color ease 150ms;
+    transition: background 300ms ease-out;
 
     @media screen and (min-width: 768px) {
         height: 13.4rem;
@@ -19,13 +19,23 @@
     }
 }
 
-.main-header--hide {
+.main-header--scroll-up {
+    position: fixed;
     transform: translateY(-100%);
+    background-color: var(--color-blue);
 }
 
-.main-header--scroll-up {
+.main-header--scroll-up.show {
     transform: translateY(0);
-    background-color: #fff;
+    transition: transform 300ms ease-out, background 300ms ease-out;
+
+    .main-header__main-nav a {
+        color: #fff;
+    }
+
+    .main-header__main-nav .btn {
+        @mixin button #fff, var(--color-red), var(--color-red);
+    }
 }
 
 .main-header__logo svg {
@@ -34,7 +44,7 @@
 }
 
 .main-header__hamburger {
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 1024px) {
         display: none;
     }
 }
@@ -46,7 +56,7 @@
 .main-header__main-nav {
     display: none;
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 1024px) {
         display: block;
     }
 }
@@ -57,24 +67,46 @@
 
 .main-header__main-nav li {
     @mixin fontOpenSans;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
     display: inline-block;
-    margin-right: 3rem;
+    margin-right: 1.5rem;
     vertical-align: middle;
-}
 
-.main-header__main-nav a {
-    text-decoration: none;
-    color: #fff;
-}
+    @media screen and (min-width: 1200px) {
+        font-size: 1.3rem;
+        margin-right: 3rem;
+    }
 
-.main-header--scroll-up .main-header__main-nav a {
-    color: var(--color-blue);
-}
+    a {
+        text-decoration: none;
+        color: #fff;
+        position: relative;
+        overflow: hidden;
+        display: block;
 
-.main-header--scroll-up .main-header__main-nav .btn {
-    @mixin button var(--color-blue), var(--color-red), var(--color-red);
+        &:after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            left: 0;
+            bottom: .2rem;
+            width: 100%;
+            height: 40%;
+            transform: translateX(-105%);
+            transition: all ease 200ms;
+            background: var(--color-red);
+        }
+
+        &.btn:after {
+            display: none;
+        }
+    }
+
+    a:hover:after,
+    &.active a:after {
+        transform: translateX(0);
+    }
 }

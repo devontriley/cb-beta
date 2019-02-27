@@ -3,9 +3,10 @@ $blueBackground = get_sub_field('blue_background');
 $greyBackground = get_sub_field('grey_background');
 $textAlign = get_sub_field('text_align');
 $moduleAlignment = get_sub_field('module_alignment');
-$header = get_sub_field('header');
-$body = get_sub_field('body');
-$body2 = get_sub_field('body_2');
+$header = colorPeriodsRed(get_sub_field('header'));
+$subheader = get_sub_field('subheader');
+$body = pureCSSTables(get_sub_field('body'));
+$body2 = pureCSSTables(get_sub_field('body_2'));
 /* Career Apply Button */
 $applyURL = get_field('apply_url');
 ?>
@@ -13,7 +14,10 @@ $applyURL = get_field('apply_url');
 <div class="basic-text <?php if($blueBackground){ echo 'blue-background'; }?> <?php if($greyBackground){ echo 'grey-background'; }?> <?php if($textAlign) { echo 'align-text-'.$textAlign; } ?> <?php if($moduleAlignment) { echo 'module-align-'.$moduleAlignment; } ?>">
     <div class="basic-text__inner" data-columns="<?php echo ($body2) ? '2' : '1' ?>">
         <?php if($header) { ?>
-            <h3><?php echo $header ?></h3>
+            <h2><?php echo $header ?></h2>
+        <?php } ?>
+        <?php if($subheader) { ?>
+            <h3><?php echo $subheader ?></h3>
         <?php } ?>
         <div class="basic-text__columns" data-columns="<?php echo ($body2) ? '2' : '1' ?>">
             <?php if($body) { ?>

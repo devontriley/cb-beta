@@ -7,6 +7,7 @@ module.exports = {
   addMainCss,
   getEnv,
   getFilesByExtension,
+  getAllFilesInPath,
   getScreenshot
 };
 
@@ -32,6 +33,7 @@ async function addMainCss() {
   });
 
   rl.on("close", async () => {
+    // Copy ".css" to ".tmp"
     if (ENV == "production") await fs.copy("./style.css", "./style.tmp");
     if (ENV == "development")
       await fs.copy("./style.css", "./compiled/main.css");
@@ -63,6 +65,17 @@ function getFilesByExtension(path, ext) {
     .ext(ext)
     .depth(1)
     .find();
+}
+
+function getAllFilesInPath(path) {
+    return fileHound
+        .create()
+        .paths(path)
+        .discard("node_modules")
+        .discard("build")
+        .discard("compiled")
+        .depth(1)
+        .find();
 }
 
 function getScreenshot(path) {

@@ -1,16 +1,54 @@
 @define-mixin basicP {
-  font-size: 1.4rem;
-  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  line-height: 1.7em;
+    font-size: 1.4rem;
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.7em;
 
-  @media screen and (min-width: 768px) {
-      font-size: calc(1.4rem + 4 * ((100vw - 768px) / 1152));
-  }
+    @media screen and (min-width: 768px) {
+        font-size: calc(1.4rem + 4 * ((100vw - 768px) / 1152));
+    }
 
-  @media screen and (min-width: 1920px) {
-      font-size: 1.8rem;
-  }
+    @media screen and (min-width: 1920px) {
+        font-size: 1.8rem;
+    }
+
+    a {
+        color: var(--color-red);
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+@define-mixin basicList {
+    font-size: 1.4rem;
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.7em;
+    margin: 2em 0 2em calc(2rem + 3%);
+
+    @media screen and (min-width: 768px) {
+        font-size: calc(1.4rem + 4 * ((100vw - 768px) / 1152));
+    }
+
+    @media screen and (min-width: 1920px) {
+        font-size: 1.8rem;
+    }
+
+    li {
+        list-style: disc;
+    }
+
+    a {
+        color: var(--color-red);
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }
 
 @define-mixin fontBariol {
@@ -30,7 +68,7 @@
     font-weight: 700;
     display: inline-block;
     color: $color;
-    border: 1px solid $borderColor;
+    border: 1.5px solid $borderColor;
     background: $bgColor;
     border-radius: 4.5rem;
     text-decoration: none;
@@ -40,6 +78,7 @@
     overflow: hidden;
     box-sizing: border-box;
     transition: color ease-out 300ms;
+    cursor: pointer;
 
     @media screen and (min-width: 992px) {
         height: calc(4.5rem + 13 * ((100vw - 992px) / 448));
@@ -89,7 +128,6 @@
     }
 
     svg {
-        stroke: $arrowColor;
         fill: $arrowColor;
         display: inline-block;
         vertical-align: middle;
@@ -98,11 +136,13 @@
         transition: all ease-out 300ms;
 
         &.arrow {
-          width: 1.7rem;
+            width: 1.7rem;
+            position: relative;
+            top: -.2rem;
 
-          @media screen and (min-width: 768px) {
-              width: 3.3rem;
-          }
+            @media screen and (min-width: 768px) {
+                width: 2.5rem;
+            }
         }
 
         &.arrow-right {
@@ -115,15 +155,25 @@
     @mixin fontOpenSans;
     border: 1px solid var(--color-light-grey);
     background: #fff;
-    height: 4rem;
-    line-height: 4rem;
+    height: 4rem !important;
+    line-height: 4rem !important;
     width: 100%;
     padding: 0 1rem;
     box-sizing: border-box;
 
     @media screen and (min-width: 768px) {
-        height: 4.166vw;
-        line-height: 4.166vw;
+        height: 4.166vw !important;
+        line-height: 4.166vw !important;
         padding: 0 1.73vw;
     }
+}
+
+@define-mixin bgGradient {
+    background: var(--color-red)
+    linear-gradient(
+        transparent 0%,
+        transparent 50%,
+        #ffffff 50%,
+        #ffffff 100%
+    );
 }

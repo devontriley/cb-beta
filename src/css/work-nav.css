@@ -41,6 +41,7 @@
 
 .work-nav__prev {
     flex: 0 0 50%;
+    position: relative;
 
     @media screen and (min-width: 768px) {
         flex: 0;
@@ -56,6 +57,7 @@
 
 .work-nav__next {
     flex: 0 0 50%;
+    position: relative;
     text-align: right;
 
     @media screen and (min-width: 768px) {
@@ -77,14 +79,27 @@
     margin-top: 4rem;
 
     @media screen and (min-width: 768px) {
-        flex: 0;
+        flex: 0 1 auto;
         order: inherit;
         margin: 0;
     }
 
-    svg {
-        width: 3.1rem;
-        height: 3.1rem;
-        margin-bottom: 3rem;
+    a {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        svg {
+            display: block;
+            width: 3.1rem;
+            height: 3.1rem;
+            flex: 0 0 3.1rem;
+            margin-bottom: 3rem;
+        }
+
+        span {
+            width: 100%;
+            display: block;
+        }
     }
 }

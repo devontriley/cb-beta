@@ -1,7 +1,8 @@
 <?php
 $header = get_sub_field('header');
-$copy = get_sub_field('copy');
-$subheader = get_sub_field('subheader');
+$copy = colorPeriodsRed(get_sub_field('copy'));
+$hideThumb = get_sub_field('hide_thumbprint');
+$subheader = colorPeriodsRed(get_sub_field('subheader'));
 $subheader_copy = get_sub_field('subheader_copy');
 $large_page_title = get_sub_field('large_page_title');
 $image = get_sub_field('image');
@@ -51,13 +52,14 @@ if($includeCareers) {
 
         <?php if($includeCareers) { ?>
             <div class="module-hero__subheader careers">
-                <h3>Current openings.</h3>
+                <h3>Current openings<span class="text-red">.</span></h3>
                 <ul>
                 <?php foreach($careers->posts as $career) { ?>
-                    <li><a href="<?php echo get_permalink($career->ID) ?>"><?php echo $career->post_title ?> ></a></li>
+                    <li><a href="<?php echo get_permalink($career->ID) ?>"><?php echo $career->post_title ?></a></li>
                 <?php } ?>
                 </ul>
-                <p>Don't see the opening you're looking for? <a href="contact-us">Contact us!</a></p>
+                <p>Don't see the opening you're looking for? <a href="<?php bloginfo('url') ?>/contact-us" class="gtm__hero_contact-us">Contact us!</a></p>
+                <span class="module-hero__large-page-title"><?php echo $large_page_title ?></span>
             </div>
         <?php } ?>
 
@@ -70,10 +72,11 @@ if($includeCareers) {
                         <option value="<?php echo $t->term_id ?>"><?php echo $t->name; ?></option>
                     <?php } ?>
                 </select>
+                <span class="module-hero__large-page-title"><?php echo $large_page_title ?></span>
             </div>
         <?php } ?>
 
-        <?php if($subheader || $subheader_copy) { ?>
+        <?php if(($subheader || $subheader_copy) && !$hideThumb) { ?>
         <svg viewBox="0 0 317 469" class="module-hero__thumbprint">
             <use xlink:href="#thumbprint-icon"></use>
         </svg>

@@ -1,5 +1,5 @@
 <?php
-$title = get_sub_field('title');
+$title = colorPeriodsRed(get_sub_field('title'));
 $copy = get_sub_field('copy');
 $image = get_sub_field('image');
 $imageURL = $image['url'];

@@ -1,5 +1,5 @@
 .mobile-displays {
-
+    overflow: hidden;
 }
 
 .mobile-displays__inner {
@@ -64,9 +64,15 @@
     top: 8.6%;
     width: 87%;
     height: 84%;
-    overflow-y: scroll;
+    overflow: hidden;
 
     img {
         width: 100%;
     }
+}
+
+.mobile-displays__image-inner {
+    height: 100%;
+    width: calc(100% + 1.7rem); /* TODO: This needs to be browser compatible */
+    overflow-y: scroll;
 }

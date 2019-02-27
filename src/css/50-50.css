@@ -1,58 +1,54 @@
 .module-50-50 {
-  margin: 6.5rem 0;
-  padding: 0 2.5rem;
+    margin: 6.5rem 0;
+    padding: 0 2.5rem;
+    @media screen and (min-width: 768px) {
+        margin: calc(8rem + 120 * ((100vw - 768px) / 1152)) 0;
+        padding: 0;
+    }
 
-  @media screen and (min-width: 768px) {
-    margin: calc(8rem + 120 * ((100vw - 768px) / 1152)) 0;
-    padding: 0;
-  }
-
-  @media screen and (min-width: 1920px) {
-    margin: 20rem 0;
-  }
+    @media screen and (min-width: 1920px) {
+        margin: 20rem 0;
+    }
 }
 
 .module-50-50__inner {
-  max-width: 110rem;
-  margin: 0 auto;
-
-  @media screen and (min-width: 768px) {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    max-width: 76.388vw;
-  }
+    max-width: 110rem;
+    margin: 0 auto;
+    @media screen and (min-width: 768px) {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        max-width: 76.388vw;
+    }
 }
 
 .module-50-50__copy {
-  margin-bottom: 4rem;
-
-  @media screen and (min-width: 768px) {
-    flex: 0 0 50%;
-    padding-right: 8vw;
-    margin-bottom: 0;
-    box-sizing: border-box;
-  }
+    margin-bottom: 4rem;
+    @media screen and (min-width: 768px) {
+        flex: 0 0 50%;
+        padding-right: 8vw;
+        margin-bottom: 0;
+        box-sizing: border-box;
+    }
 }
 
 .module-50-50.image-left .module-50-50__copy {
-  @media screen and (min-width: 768px) {
-    order: 2;
-    padding-right: 0;
-    padding-left: 8vw;
-  }
+    @media screen and (min-width: 768px) {
+        order: 2;
+        padding-right: 0;
+        padding-left: 8vw;
+    }
 }
 
 .module-50-50__copy h2 {
-  margin: 0 0 4rem 0;
+    margin: 0 0 2rem 0;
+    @media screen and (min-width: 768px) {
+        margin-bottom: calc(2rem + 20 * ((100vw - 768px) / 1152));
+    }
 
-  @media screen and (min-width: 768px) {
-    margin-bottom: calc(4rem + 53 * ((100vw - 768px) / 1152));
-  }
-
-  @media screen and (min-width: 1920px) {
-    margin-bottom: 9.3rem;
-  }
+    @media screen and (min-width: 1920px) {
+        margin-bottom: 4rem;
+    }
 }
 
 .module-50-50__copy p {
@@ -65,11 +61,11 @@
 }
 
 .module-50-50__image {
-  @media screen and (min-width: 768px) {
-    flex: 0 0 50%;
-  }
+    @media screen and (min-width: 768px) {
+        flex: 0 0 50%;
+    }
 }
 
 .module-50-50__image img {
-  max-width: 100%;
+    max-width: 100%;
 }

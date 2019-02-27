@@ -5,12 +5,12 @@
     overflow: hidden;
 
     @media screen and (min-width: 768px) {
-        margin: 4.51388vw 0;
+        margin: calc(8rem + 120 * ((100vw - 768px) / 1152)) 0;
         padding: 0;
     }
 
     @media screen and (min-width: 1920px) {
-        margin: 9rem 0;
+        margin: 20rem 0;
     }
 }
 
@@ -88,6 +88,7 @@
         flex-wrap: nowrap;
         align-items: center;
         flex: 0 0 50%;
+        max-width: 50%;
         height: 18.75vw;
         padding: 0 2.36vw;
         box-sizing: border-box;
@@ -121,13 +122,15 @@
     }
 }
 
-.image-four-callouts__callouts li:hover:before {
+.image-four-callouts__callouts li:hover:before,
+.image-four-callouts__callouts li.active:before {
     background: var(--color-red);
     transform: scale(1.05);
     box-shadow: 4px 6px 9px 0 rgba(0,0,0,0.17);
 }
 
-.image-four-callouts__callouts li:hover {
+.image-four-callouts__callouts li:hover,
+.image-four-callouts__callouts li.active {
     color: #fff;
     z-index: 1;
 }
@@ -161,7 +164,7 @@
     box-sizing: border-box;
     background: var(--color-lightest-grey);
     text-align: center;
-    transition: all ease 300ms;
+    transition: background ease 300ms;
     font-family: 'Open Sans';
     font-weight: 700;
 }
@@ -173,25 +176,27 @@
 
 .image-four-callouts .slick-prev {
     position: absolute;
-    left: 0;
-    bottom: 0;
+    left: 1rem;
+    bottom: 1rem;
 }
 
 .image-four-callouts .slick-next {
     position: absolute;
-    right: 0;
-    bottom: 0;
+    right: 1rem;
+    bottom: 1rem;
 }
 
 .image-four-callouts .slick-dots {
     display: block;
     text-align: center;
     margin: 3rem 0 0 0;
+    height: 3rem;
+    line-height: 3rem;
 }
 
 .image-four-callouts .slick-dots li {
     display: inline-block;
-    margin: 0 1rem;
+    margin: 0 .5rem;
 }
 
 .image-four-callouts .slick-dots button {
@@ -209,6 +214,39 @@
 }
 
 .image-four-callouts .slick-dots li.slick-active button {
-    transform: scale(1.25);
     background: var(--color-red);
+}
+
+.image-four-callouts__mobile-controls {
+    display: block;
+    position: relative;
+
+    @media screen and (min-width: 768px) {
+        display: none;
+    }
+
+    .prev {
+        position: absolute;
+        left: 0;
+        top: 0;
+        transform: translateY(-100%);
+    }
+
+    .next {
+        position: absolute;
+        right: 0;
+        top: 0;
+        transform: translateY(-100%);
+    }
+
+    .prev:hover,
+    .next:hover {
+        svg {
+            fill: var(--color-red);
+        }
+    }
+
+    svg {
+        fill: var(--color-blue);
+    }
 }

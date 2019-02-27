@@ -1,5 +1,6 @@
 <?php
 $header = get_sub_field('header');
+$header = colorPeriodsRed($header);
 $tabs = get_sub_field('tabs');
 ?>
 

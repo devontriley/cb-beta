@@ -18,7 +18,9 @@ $quotes = get_sub_field('quotes');
                     <div class="quote-slider__byline">
                         <?php echo $q['byline'] ?>
                     </div>
-                    <img src="<?php echo $imageURL ?>" srcset="<?php echo $srcset ?>" sizes="<?php echo $sizes ?>" alt="<?php echo $imageAlt ?>" class="quote-slider__logo" />
+                    <?php if($imageURL) { ?>
+                        <img src="<?php echo $imageURL ?>" srcset="<?php echo $srcset ?>" sizes="<?php echo $sizes ?>" alt="<?php echo $imageAlt ?>" class="quote-slider__logo" />
+                    <?php } ?>
                 </li>
             <?php } ?>
         </ul>

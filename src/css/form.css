@@ -23,6 +23,7 @@
 }
 
 .module-form__copy {
+    margin-bottom: 2em;
 }
 
 .module-form__copy p {
@@ -40,11 +41,16 @@
     @media screen and (min-width: 768px) {
         width: 45vw;
         margin-left: 11vw;
+        min-height: 60vw;
     }
 }
 
 .module-form__form {
     margin-top: 2.77vw;
+}
+
+.module-form__form + p {
+    margin-top: 5rem;
 }
 
 .module-form__field {
@@ -59,8 +65,61 @@
     margin-bottom: 1.04vw;
 }
 
+/*
+ * Ninja Forms modifications
+ */
+.module-form .field-wrap {
+    flex-wrap: wrap;
+}
+
+.module-form .label-right .nf-field-label {
+    white-space: nowrap;
+}
+
+.module-form .nf-before-form-content {
+    margin-bottom: 2.08vw;
+}
+
+.module-form .nf-field-description {
+    margin-left: calc(2% + 20px);
+    margin-right: 0;
+    margin-top: .5rem;
+    font-size: 1.2rem;
+    flex: 0 0 100%;
+
+    p {
+        font-size: 1.4rem;
+    }
+}
+
+.nf-form-fields-required,
+.ninja-forms-req-symbol {
+    display: none;
+}
+
+.module-form select.ninja-forms-field {
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        padding-right: 0;
+    }
+}
+
+.module-form .nf-element[type="button"] {
+    transition: background ease 300ms;
+
+    &:hover {
+        background: var(--color-red);
+    }
+}
+/*
+ */
+
 .module-form input[type=text],
-.module-form input[type=email] {
+.module-form input[type=email],
+.module-form input[type=tel] {
+    @mixin input;
+}
+
+.module-form select {
     @mixin input;
 }
 
@@ -71,6 +130,11 @@
     width: 100%;
     padding: 1.38vw 1.73vw;
     box-sizing: border-box;
+}
+
+.module-form input[type=submit],
+.module-form input[type=button] {
+    @mixin button;
 }
 
 .module-form__callout {
@@ -102,6 +166,6 @@
 }
 
 .module-form__callout .btn {
-    @mixin button #fff, var(--color-blue), var(--color-red), var(--color-blue);
+    @mixin button #fff, var(--color-blue), var(--color-blue), transparent;
     margin: 2em 0;
 }
